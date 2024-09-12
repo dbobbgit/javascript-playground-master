@@ -1,15 +1,21 @@
 <script setup></script>
 
 <template>
-  <div>
-    <h1>Star Wars Wordle</h1>
-    <!-- <p v-if="character">The game is ready! Start guessing the word!</p> -->
-    <!-- <p>{{ character.name }}</p> -->
+  <!-- <div>
+    <h1>Star Wars Wordle</h1> -->
+  <!-- <p v-if="character">The game is ready! Start guessing the word!</p> -->
+  <!-- <p>{{ character.name }}</p>
     <p v-if="hiddenWord">The hidden word is: {{ hiddenWord }}</p>
     <ul v-if="characters.length">
       <li v-for="(character, index) in characters" :key="index">{{ character.name }}</li>
     </ul>
+  </div> -->
+
+  <div id="app">
+    <!-- Render the Wordle Game Component -->
+    <WordleGame />
   </div>
+
   <div class="h-screen flex justify-center items-center bg-gradient-to-br from-indigo-600 to-purple-600">
     <div
       class="relative bg-white px-6 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10"
@@ -70,7 +76,7 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 import { getStarWarsData } from './swapiService'
 
 export default {
@@ -92,6 +98,15 @@ export default {
       const randomIndex = Math.floor(Math.random() * this.characters.length)
       this.hiddenWord = this.characters[randomIndex].name.toUpperCase() // Store the random word in uppercase
     }
+  },
+}
+</script> -->
+<script>
+import WordleGame from './WordleGame.vue'
+
+export default {
+  components: {
+    WordleGame,
   },
 }
 </script>
